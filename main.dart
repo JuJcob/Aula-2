@@ -1,33 +1,23 @@
 import 'dart:io';
-
+//Crie um programa em Dart que leia 4 valores inteiros A, B, C e D.
 void main() {
-  String escolhaJogador1;
-  int numeroJogador1, numeroJogador2;
+  print('Digite quatro valores inteiros:');
 
-  // jogador 1 escolhe entre par ou ímpar
-  do {
-    print("Jogador 1: Escolha Par (P) ou Ímpar (I)");
-    escolhaJogador1 = stdin.readLineSync()!;
-  } while (escolhaJogador1 != "P" && escolhaJogador1 != "I");
+  int a = int.parse(stdin.readLineSync()!);
+  int b = int.parse(stdin.readLineSync()!);
+  int c = int.parse(stdin.readLineSync()!);
+  int d = int.parse(stdin.readLineSync()!);
 
-  // jogadores escolhem números
-  print("Jogador 1: Escolha um número");
-  numeroJogador1 = int.parse(stdin.readLineSync()!);
-  print("Jogador 2: Escolha um número");
-  numeroJogador2 = int.parse(stdin.readLineSync()!);
-
-  // verifica quem ganhou
-  if ((numeroJogador1 + numeroJogador2) % 2 == 0) { // soma é par
-    if (escolhaJogador1 == "P") {
-      print("Jogador 1 venceu!");
+ //e B for maior do que C e se D for maior do que A, e a soma de C com D for maior que a soma de A e B e se C e D, ambos, forem positivos.
+  if ( b > c && d > a && c + d > a + b && c > 0 && d > 0 ) {
+ //e se a variável A for par escrever a mensagem "Valores aceitos", senão escrever "Valores não aceitos".
+  if(a % 2 == 0){
+    print('Valores Aceitos');
     } else {
-      print("Jogador 2 venceu!");
+      print('Valores não Aceitos');
     }
-  } else { // soma é ímpar
-    if (escolhaJogador1 == "I") {
-      print("Jogador 1 venceu!");
-    } else {
-      print("Jogador 2 venceu!");
-    }
-  }
+  } else {
+    print('Valores não Aceitos');
+  } 
+
 }
